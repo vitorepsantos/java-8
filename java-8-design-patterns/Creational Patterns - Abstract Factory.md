@@ -4,7 +4,7 @@ Creational Pattern
 # Intent
 > "Provide an interface for creating families of related or dependent objects without specifying their concrete classes." [1]  
 
-Attention to "**families** of **related** or **dependent** objects", it tell us that the **Abstract Factory Pattern** is not about create one single object per factory, its propose that one factory will produce a set of objects that can only work properly when working toghether. Think you have a Client/Unit/Class that use a set of objects that, although each have its own behavior, they are design to work toghether. 
+Attention to "**families** of **related** or **dependent** objects", it tell us that the **Abstract Factory Pattern** is not about create one single object per factory, its propose that one factory will produce a set of objects that can only work properly when working together. Think you have a Client/Unit/Class that use a set of objects that, although each have its own behavior, they are design to work toghether. 
 
 # Motivation
 A good example is an app that have two themes, light and dark, when the user choose one of those two, it doesn't make sense combine them, imagine a white text in a white background. So you have two groups of objects, light and dark, that never work togheter.
