@@ -81,7 +81,9 @@ Here are key consequences of the Builder pattern
 # Implementation
 
 * Typically there's an abstract Builder class that defines an operation for each component that a director may ask itto create
+
 * The operations do nothing by default.
+
 * A ConcreteBuilder class overrides operations for components it's interested in creating.
 
 Here are other implementation issues to consider:
@@ -101,6 +103,30 @@ Here are other implementation issues to consider:
 3. **Empty methods as default in Builder.** 
    
    * In C++, the build methods are intentionally not declared pure virtual member functions. They're defined as empty methods instead, letting clients override only the operations they're interested in.
+
+# Sample Code
+
+  [Builder](./builder)
+ 
+# Known Uses
+
+1. The RTF converter application is from ET++. Its text building block uses a builder to process text stored in the RTF format.
+
+2. Builder is a common pattern in Smalltalk-80
+
+     * The Parser class in the compiler subsystem is a **Director** that takes a ProgramNodeBuilder object as an argument (**dependency injection**). A Parser object notifies its ProgramNodeBuilder object each time it recognizes a syntactic construct. When the parser is done, it asks the builder for the parse tree it built and returns it to the client.
+
+     * ClassBuilder is a builder that Classes use to create subclasses for themselves. In this case a Class is both the Director and the Product. (**@Builder from Lombok**)
+     
+     * ByteCodeStream is a builder that creates a compiled method as a byte array. ByteCodeStream is a nonstandard use of the Builder pattern, because the complex object it builds is encoded as a byte array, not as a normal Smalltalk object. But the interface to ByteCodeStream is typical of a builder, and it would be easy to replace ByteCodeStream with a different class that represented programs as a composite object.
+  
+  3. The Service Configurator framework from the Adaptive Communications Environment uses a builder to construct network service components that are linked into a server at run-time. The components are described with a configuration language that's parsed by an LALR parser. The semantic actions of the parser perform operations on the builder that add information to the service component. In this case, the parser is the Director.
+
+# Related Patterns
+
+1. **Abstract Factory** is similar to Builder in that it too may construct complex objects. The primary difference is that the Builder pattern focuses on constructing a complex object step by step. Abstract Factory's emphasis is on families of product objects (either simple or complex). Builder returns the product as a final step, but as far as the Abstract Factory pattern is concerned, the product gets returned immediately.
+
+2. **A Composite** is what the builder often builds.
 
 # References
 
