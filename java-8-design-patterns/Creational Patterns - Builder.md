@@ -49,7 +49,7 @@ Applied to this example, the Builder pattern separates the algorithm for interpr
 
 4. **Product (ASCIIText, TeXText, TextWidget)**    
 
-    * Represents the complex object under construction. ConcreteBuilder builds the product's internalrepresentation and defines the process by which it's assembled.
+    * Represents the complex object under construction. ConcreteBuilder builds the product's internal representation and defines the process by which it's assembled.
 
 # Collaborations
 
@@ -71,20 +71,20 @@ Here are key consequences of the Builder pattern
 
 1. **It lets you vary a product's internal representation.** 
 
-    * Because the product isconstructed through an abstract interface, all you have to do to change the product's internal representationis define a new kind of builder.
+    * Because the product is constructed through an abstract interface, all you have to do to change the product's internal representation (create a different product) is define a new kind of builder.
 
 2. **It isolates code for construction and representation.** 
 
-    * The Builder pattern improves modularity byencapsulating the way a complex object is constructed and represented. Clients needn't know anythingabout the classes that define the product's internal structure. 
+    * The Builder pattern improves modularity by encapsulating the way a complex object is constructed and represented. Clients needn't know anything about the classes that define the product's internal structure. 
 
-    * Each ConcreteBuilder contains all the code to create and assemble a particular kind of product. The code is written once; then different Directors can reuse it to build Product variants from the same set of parts. In the earlier RTF example, we could define a reader for a format other than RTF, say, an SGMLReader, and use the same TextConverters to generate ASCIIText, TeXText, and TextWidget renditions of SGMLdocuments.
+    * Each ConcreteBuilder contains all the code to create and assemble a particular kind of product. The code is written once; then different Directors can reuse it to build Product variants from the same set of parts. In the earlier RTF example, we could define a reader for a format other than RTF, say, an SGMLReader, and use the same TextConverters to generate ASCIIText, TeXText, and TextWidget renditions of SGML documents.
 
 3. **It gives you finer control over the construction process**  
-   * Unlike creational patterns that construct productsin one shot, the Builder pattern constructs the product step by step under the director's control. Only whenthe product is finished does the director retrieve it from the builder. Hence the Builder interface reflectsthe process of constructing the product more than other creational patterns. This gives you finer controlover the construction process and consequently the internal structure of the resulting product.
+   * Unlike creational patterns that construct products in one shot, the Builder pattern constructs the product step by step under the director's control. Only when the product is finished does the director retrieve it from the builder. Hence the Builder interface reflects the process of constructing the product more than other creational patterns. This gives you finer control over the construction process and consequently the internal structure of the resulting product.
 
 # Implementation
 
-* Typically there's an abstract Builder class that defines an operation for each component that a director may ask itto create
+* Typically there's an abstract Builder class that defines an operation for each component that a director may ask it to create
 
 * The operations do nothing by default.
 
@@ -92,13 +92,13 @@ Here are key consequences of the Builder pattern
 
 Here are other implementation issues to consider:
 
-1. **Assembly and construction interface**. 
+1. **Assembly and construction interface** 
    
-   * Builders construct their products in step-by-step fashion. Therefore the Builder class interface must be general enough to allow the construction of products for all kinds of concrete builders.
+   * Builders construct their products in step-by-step fashion. Therefore the **Builder class interface must be general enough** to allow the construction of products for all kinds of concrete builders.
   
-   * A key design issue concerns the model for the construction and assembly process. A model where theresults of construction requests are simply appended to the product is usually sufficient. In the RTFexample, the builder converts and appends the next token to the text it has converted so far.
+   * A key design issue concerns the model for the construction and assembly process. A model where the results of construction requests are simply appended to the product is usually sufficient. In the RTF example, the builder converts and appends the next token to the text it has converted so far.
    
-   * But sometimes you might need access to parts of the product constructed earlier. In the Maze example wepresent in the Sample Code, the MazeBuilder interface lets you add a door between existing rooms. Treestructures such as parse trees that are built bottom-up are another example. In that case, the builder wouldreturn child nodes to the director, which then would pass them back to the builder to build the parentnodes.
+   * But sometimes **you might need access to parts** of the product constructed earlier. In the Maze example we present in the Sample Code, the MazeBuilder interface lets you add a door between existing rooms. Tree structures such as parse trees that are built bottom-up are another example. In that case, the builder would return child nodes to the director, which then would pass them back to the builder to build the parent nodes.
  
 2. **Why no abstract class for products?** 
    
@@ -128,7 +128,7 @@ Here are other implementation issues to consider:
 
 # Related Patterns
 
-1. **Abstract Factory** is similar to Builder in that it too may construct complex objects. The primary difference is that the Builder pattern focuses on constructing a complex object step by step. Abstract Factory's emphasis is on families of product objects (either simple or complex). Builder returns the product as a final step, but as far as the Abstract Factory pattern is concerned, the product gets returned immediately.
+1. **Abstract Factory** is similar to Builder in that it too may construct complex objects. The primary difference is that the **Builder pattern focuses on constructing a complex object step by step**. **Abstract Factory's emphasis is on families of product objects (either simple or complex)**. Builder returns the product as a final step, but as far as the Abstract Factory pattern is concerned, the product gets returned immediately.
 
 2. **A Composite** is what the builder often builds.
 
