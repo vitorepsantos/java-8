@@ -25,10 +25,9 @@ Applied to this example, the Builder pattern separates the algorithm for interpr
 
 2. The construction process must allow different representations for the object that's constructed.
 
-| ![Builder Structure [1]](./img/creational_patterns_builder_img_1_structure.png) | 
+| ![Builder Structure [1]](./img/creational_patterns_builder_img_1_structure.png) |
 |:--:| 
-| *Builder Structure [1]* |
-
+| **Builder Structure [1]** |
 
 # Participants
 
@@ -63,6 +62,10 @@ Applied to this example, the Builder pattern separates the algorithm for interpr
 4. The client retrieves the product from the builder.  
 
 ![Builder Collaborations [1]](./img/creational_patterns_builder_img_2_collaborations.png)
+
+| ![Builder Collaborations [1]](./img/creational_patterns_builder_img_2_collaborations.png) |
+|:--:| 
+| **Builder Collaborations [1]** |
 
 # Consequences
 
@@ -109,7 +112,7 @@ Here are other implementation issues to consider:
 
 # Sample Code
 
-  [Builder](./builder)
+  [Builder Code Sample](./builder)
  
 # Known Uses
 
