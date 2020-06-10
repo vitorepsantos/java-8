@@ -1,6 +1,6 @@
 package br.code.maze;
 
-public class MazeBuilder {
+public class MazeBuilder { /** Builder (Abstraction) **/
 
     void buildMaze() {}
 

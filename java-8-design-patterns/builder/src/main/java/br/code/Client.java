@@ -10,13 +10,12 @@ public class Client
     public static void main( String[] args ) {
         MazeGame game = new MazeGame();
         MazeBuilderDefault builder = new MazeBuilderDefault();
-        game.createMaze(builder);
-        Maze maze = builder.getMaze();
+        Maze maze = game.createMaze(builder); /** inject the concrete builder into the director **/
         System.out.println(maze.roomNo(1).getId());
 
         MazeGame game1 = new MazeGame();
         MazeBuilderCounting mazeBuilderCounting = new MazeBuilderCounting();
-        game1.createMaze(mazeBuilderCounting);
+        Maze maze1 = game1.createMaze(mazeBuilderCounting); /** inject the concrete builder into the director **/
         int counts = mazeBuilderCounting.getCounts();
         System.out.println(counts);
     }

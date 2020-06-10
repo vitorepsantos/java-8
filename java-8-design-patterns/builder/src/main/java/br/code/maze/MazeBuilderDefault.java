@@ -1,6 +1,6 @@
 package br.code.maze;
 
-public class MazeBuilderDefault extends MazeBuilder {
+public class MazeBuilderDefault extends MazeBuilder { /** Builder (Concrete Class) **/
 
     private Maze currentMaze;
 

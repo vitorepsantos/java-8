@@ -1,6 +1,6 @@
 package br.code.maze;
 
-public class MazeGame {
+public class MazeGame { /** Director **/
 
     public Maze createMaze(MazeBuilder mazeBuilder) {
         mazeBuilder.buildMaze();

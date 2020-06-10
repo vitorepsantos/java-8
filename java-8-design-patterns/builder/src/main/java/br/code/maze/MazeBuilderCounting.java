@@ -1,6 +1,6 @@
 package br.code.maze;
 
-public class MazeBuilderCounting extends MazeBuilder {
+public class MazeBuilderCounting extends MazeBuilder { /** Builder (Concrete Class) **/
 
     private int doors;
     private int rooms;
