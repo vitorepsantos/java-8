@@ -61,8 +61,6 @@ Applied to this example, the Builder pattern separates the algorithm for interpr
 
 4. The client retrieves the product from the builder.  
 
-![Builder Collaborations [1]](./img/creational_patterns_builder_img_2_collaborations.png)
-
 | ![Builder Collaborations [1]](./img/creational_patterns_builder_img_2_collaborations.png) |
 |:--:| 
 | **Builder Collaborations [1]** |
