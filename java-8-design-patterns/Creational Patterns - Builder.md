@@ -17,7 +17,7 @@ Attention, TextConverter is a abstract interface, the subclasses of TextConverte
 
 In the scenario described above, each converter is called a **builder** in the pattern, and the reader is called the **director**. 
 
-Applied to this example, the Builder pattern separates the algorithm for interpretinga textual format (that is, the parser for RTF documents) from how a converted format gets created andrepresented. This lets us reuse the RTFReader's parsing algorithm to create different text representations fromRTF documents - just configure the RTFReader with different subclasses of TextConverter.  
+Applied to this example, the Builder pattern separates the algorithm for interpreting a textual format (that is, the parser for RTF documents) from how a converted format gets created and represented. This lets us reuse the RTFReader's parsing algorithm to create different text representations from RTF documents - just configure the RTFReader with different subclasses of TextConverter.  
 
 # Applicability
 
@@ -25,7 +25,10 @@ Applied to this example, the Builder pattern separates the algorithm for interpr
 
 2. The construction process must allow different representations for the object that's constructed.
 
-![Builder Structure [1]](./img/creational_patterns_builder_img_1_structure.png)
+| ![Builder Structure [1]](./img/creational_patterns_builder_img_1_structure.png) | 
+|:--:| 
+| *Builder Structure [1]* |
+
 
 # Participants
 
