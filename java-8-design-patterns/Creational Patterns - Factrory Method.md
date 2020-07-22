@@ -93,7 +93,7 @@ In the Document example, the Document class could define a factory method called
 
 With these constraints, it's better to use a separate Manipulator object that implements the interaction and keeps track of any manipulation-specific state that's needed. Different figures will use different Manipulator subclasses to handle particular interactions. The resulting Manipulator class hierarchy parallels (at least partially) the Figure class hierarchy: 
 
-| ![Factory Method Consequences [1]](./img/factory_method_img_consequences.png) |
+| ![Factory Method Consequences [1]](./img/factory_method_consequences.png) |
 |:--:| 
 | **Factory Method Consequences [1]** |
 
